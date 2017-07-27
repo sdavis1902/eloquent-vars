@@ -1,4 +1,4 @@
-# eloquent-vars
+# Eloquent Vars
 
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
