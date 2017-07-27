@@ -1,0 +1,5 @@
+.env
+.ctags
+tags
+*.swp
+.php_cs.cache
