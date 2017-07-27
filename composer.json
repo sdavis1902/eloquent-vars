@@ -1,7 +1,7 @@
 {
     "name": "sdavis1902/eloquent-vars",
     "type": "library",
-    "description": "Add ability to save additional fields or Vars on a model without a specific db column for it",
+    "description": "Add ability to save additional fields or Vars on a Laravel model without a specific db column for it",
     "keywords": [
         "sdavis1902",
         "EloquentVars"

@@ -3,7 +3,7 @@
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Add ability to save additional fields or Vars on a model without a specific db column for it
+Add ability to save additional fields or Vars on a Laravel model without a specific db column for it
 
 ## Install
 
