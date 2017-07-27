@@ -70,12 +70,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/sdavis1902/laravel-controller-routes.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sdavis1902/eloquent-vars.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/sdavis1902/laravel-controller-routes/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/sdavis1902/laravel-controller-routes.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/sdavis1902/laravel-controller-routes.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/sdavis1902/laravel-controller-routes.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/sdavis1902/eloquent-vars/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/sdavis1902/eloquent-vars.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/sdavis1902/eloquent-vars.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/sdavis1902/eloquent-vars.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/sdavis1902/laravel-controller-routes
 [link-travis]: https://travis-ci.org/sdavis1902/laravel-controller-routes
