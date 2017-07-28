@@ -93,8 +93,6 @@ foreach($tasks as $task){
 
 Note, values are stored as a string, so if you save an int, when you get it, it will be a string.
 
-Will add more ways of saving and retrieving vars in the near future.
-
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
