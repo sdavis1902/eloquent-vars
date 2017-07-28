@@ -53,6 +53,44 @@ echo $task->getVar('temporary_field');
 $task->deleteVar('temporary_field');
 ```
 
+Note, the above require the model object to have an id, so will need to have been written to the database already.
+
+If you want use a more eloquent method, you can use the following.  Additionally, the following method will work on new model instances that have not been inserted yet.
+
+``` php
+// saving new model and it's vars all at once
+$task = new \App\Task;
+$task->name = 'Some Task';
+
+// now our vars
+$task->vars->first_var = 'test';
+
+$task->save();
+
+// retreiving a model and accessing it's vars directly
+$task = \App\Task::find(1);
+echo $task->vars->first_var;
+
+// save another var
+$task->vars->second_var = 'another test';
+$task->save();
+
+// if you try to get a var that doesn't exist, it simply returns null
+var_dump($task->vars->no_var);
+```
+
+Additionally, the trait includes a relationship for the vars which allows you to eager load.  The above method of accessing vars uses this relationship, so you can eager load and then use the vars like above.
+
+``` php
+$tasks = \App\Task::with('ModelVars')->get();
+
+foreach($tasks as $task){
+    if($task->vars->first_var){
+        echo $task->vars->first_var;
+    }
+}
+```
+
 Note, values are stored as a string, so if you save an int, when you get it, it will be a string.
 
 Will add more ways of saving and retrieving vars in the near future.
