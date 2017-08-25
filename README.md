@@ -13,7 +13,7 @@ Via Composer
 $ composer require sdavis1902/eloquent-vars
 ```
 
-Add the service provider
+Add the service provider ( not required for 5.5 )
 
 ``` php
 sdavis1902\EloquentVars\EloquentVarsServiceProvider::class,
