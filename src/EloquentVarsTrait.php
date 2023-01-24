@@ -55,15 +55,42 @@ trait EloquentVarsTrait {
         return $this->vars;
     }
 
+    public function saveAllVars(){
+        if (empty($this->vars) || empty($this->attributes['id'])) {
+            return true;
+        }
+
+        $model_id = $this->attributes['id'];
+        $table    = $this->getTable();
+        $vars     = []; // prepare a list of vars' to insert/update
+        foreach ($this->vars as $key => $value) {
+            $vars[$key] = [
+                "key"      => $key,
+                "value"    => $value,
+                "table"    => $table,
+                "model_id" => $model_id,
+                "id"       => null,
+            ];
+        }
+
+        // fill out primary key IDs for any existing vars,
+        // to have ::upsert update them instead of creating new
+        $vars_in_db = ModelVar::where('model_id', '=', $model_id)
+            ->where('table', '=', $table)
+            ->whereIn('key', array_keys((array) $this->vars))
+            ->select('id', 'key')->get()->toArray();
+        foreach ($vars_in_db as $var_in_db) {
+            $vars[$var_in_db["key"]]["id"] = $var_in_db["id"];
+        }
+
+        ModelVar::upsert(array_values($vars), ["id"], ["value"]);
+
+        return true;
+    }
+
     public static function bootEloquentVarsTrait(){
         static::saved(function($model){
-            if(empty($model->vars)){
-                return true; // nothign to do, lets exit
-            }
-
-            foreach($model->vars as $key => $value){
-                $model->setVar($key, $value);
-            }
+            return $model->saveAllVars();
         });
     }
 }
