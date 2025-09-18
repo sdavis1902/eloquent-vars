@@ -13,8 +13,14 @@ trait EloquentVarsTrait {
     }
 
     public function setVar( $key, $value ){
-        if( !$value ) return false;
+        if( !is_string($key) || empty(trim($key)) ) return false;
         if(empty($this->attributes['id'])) return false;
+
+        // If value is null, false, or empty string, delete the var instead
+        if( $value === null || $value === false || $value === '' ){
+            return $this->deleteVar($key);
+        }
+
         if ($this->vars) {
             $this->vars->{$key} = $value;
         }
@@ -27,7 +33,7 @@ trait EloquentVarsTrait {
             $var->model_id = $this->attributes['id'];
             $var->key = $key;
             $var->value = $value;
-            $var->table = $this->getTable();
+            $var->setAttribute('table', $this->getTable());
             $var->save();
         }
     }
@@ -38,13 +44,13 @@ trait EloquentVarsTrait {
         return $var ? $var->value : false;
     }
 
-	public function deleteVar($key){
+    public function deleteVar($key){
         if(empty($this->attributes['id'])) return false;
         if ($this->vars) {
             unset($this->vars->{$key});
         }
         ModelVar::where('model_id', '=', $this->attributes['id'])->where('key', '=', $key)->where('table', '=', $this->getTable())->delete();
-	}
+    }
 
     public function getVarsAttribute(){
         if(!empty($this->vars)){

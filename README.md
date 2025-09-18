@@ -22,7 +22,7 @@ sdavis1902\EloquentVars\EloquentVarsServiceProvider::class,
 Publish and run migration
 ``` bash
 $ php artisan vendor:publish --provider="sdavis1902\EloquentVars\EloquentVarsServiceProvider"
-$ php artisan:migrate
+$ php artisan migrate
 ```
 
 ## Usage
@@ -113,10 +113,10 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/sdavis1902/eloquent-vars.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sdavis1902/eloquent-vars.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/sdavis1902/laravel-controller-routes
-[link-travis]: https://travis-ci.org/sdavis1902/laravel-controller-routes
-[link-scrutinizer]: https://scrutinizer-ci.com/g/sdavis1902/laravel-controller-routes/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/sdavis1902/laravel-controller-routes
-[link-downloads]: https://packagist.org/packages/sdavis1902/laravel-controller-routes
+[link-packagist]: https://packagist.org/packages/sdavis1902/eloquent-vars
+[link-travis]: https://travis-ci.org/sdavis1902/eloquent-vars
+[link-scrutinizer]: https://scrutinizer-ci.com/g/sdavis1902/eloquent-vars/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/sdavis1902/eloquent-vars
+[link-downloads]: https://packagist.org/packages/sdavis1902/eloquent-vars
 [link-author]: https://github.com/sdavis1902
 [link-contributors]: ../../contributors

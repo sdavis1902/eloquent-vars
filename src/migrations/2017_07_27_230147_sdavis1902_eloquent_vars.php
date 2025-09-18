@@ -19,8 +19,12 @@ class Sdavis1902EloquentVars extends Migration
             $table->integer('model_id')->unsigned();
             $table->string('table', 255);
             $table->string('key', 255);
-            $table->string('value', 255)->nullable();
+            $table->text('value')->nullable();
             $table->timestamps();
+
+            // Add indexes for better performance
+            $table->index(['model_id', 'table']);
+            $table->index(['model_id', 'table', 'key']);
         });
     }
 
